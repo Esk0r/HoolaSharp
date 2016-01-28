@@ -16,7 +16,7 @@ namespace HoolaLucian
     {
         private static Menu Menu;
         private static Orbwalking.Orbwalker Orbwalker;
-        private static Obj_AI_Hero Player = ObjectManager.Player;
+        private static Obj_AI_Hero Player;
         private static HpBarIndicator Indicator = new HpBarIndicator();
         private static Spell Q, Q1, W, E, R;
         private static bool AAPassive;
@@ -56,6 +56,7 @@ namespace HoolaLucian
 
         static void OnGameLoad(EventArgs args)
         {
+            Player = ObjectManager.Player;
             if (Player.ChampionName != "Lucian") return;
             Game.PrintChat("Hoola Lucian - Loaded Successfully, Good Luck! :)");
             Q = new Spell(SpellSlot.Q, 675);
